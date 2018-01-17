@@ -1,0 +1,480 @@
+{
+	"info": {
+		"name": "shmetro-api",
+		"_postman_id": "c278e41d-b09f-8cc1-1afb-82abf8fcba09",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取当前运行情况",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://service.shmetro.com/i/sm?method=doGetAllLineStatus",
+					"protocol": "http",
+					"host": [
+						"service",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"i",
+						"sm"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "doGetAllLineStatus",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取所有站点",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://m.shmetro.com/core/shmetro/mdstationinfoback.ashx?act=getAllStations",
+					"protocol": "http",
+					"host": [
+						"m",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"core",
+						"shmetro",
+						"mdstationinfoback.ashx"
+					],
+					"query": [
+						{
+							"key": "act",
+							"value": "getAllStations",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取历史运行情况",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "line",
+							"value": "1",
+							"description": "几号线",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://service.shmetro.com/i/sm?method=doGetYxqkDetail",
+					"protocol": "http",
+					"host": [
+						"service",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"i",
+						"sm"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "doGetYxqkDetail",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取所有线路的标准色",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://m.shmetro.com/interface/metromap/metromap.aspx?func=lines",
+					"protocol": "http",
+					"host": [
+						"m",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"interface",
+						"metromap",
+						"metromap.aspx"
+					],
+					"query": [
+						{
+							"key": "func",
+							"value": "lines",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取线路首末班车时刻表",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://m.shmetro.com/interface/metromap/metromap.aspx?func=fltime&line=1",
+					"protocol": "http",
+					"host": [
+						"m",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"interface",
+						"metromap",
+						"metromap.aspx"
+					],
+					"query": [
+						{
+							"key": "func",
+							"value": "fltime",
+							"equals": true
+						},
+						{
+							"key": "line",
+							"value": "1",
+							"equals": true,
+							"description": "几号线"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取线路换乘车站时刻表",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://m.shmetro.com/interface/metromap/metromap.aspx?func=exfltime&line1=1",
+					"protocol": "http",
+					"host": [
+						"m",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"interface",
+						"metromap",
+						"metromap.aspx"
+					],
+					"query": [
+						{
+							"key": "func",
+							"value": "exfltime",
+							"equals": true
+						},
+						{
+							"key": "line1",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "根据线路获取所有站点",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "act",
+							"value": "slsddl",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "ln",
+							"value": "10",
+							"description": "几号线",
+							"type": "text"
+						},
+						{
+							"key": "sc",
+							"value": "",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://m.shmetro.com/core/shmetro/mdstationinfoback.ashx",
+					"protocol": "http",
+					"host": [
+						"m",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"core",
+						"shmetro",
+						"mdstationinfoback.ashx"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "路径查询",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://service.shmetro.com/i/c?o=0926&d=0737&t=0",
+					"protocol": "http",
+					"host": [
+						"service",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"i",
+						"c"
+					],
+					"query": [
+						{
+							"key": "o",
+							"value": "0926",
+							"equals": true,
+							"description": "起始站点 id"
+						},
+						{
+							"key": "d",
+							"value": "0737",
+							"equals": true,
+							"description": "终点站 id"
+						},
+						{
+							"key": "t",
+							"value": "0",
+							"equals": true,
+							"description": "票卡种类: 0 -> 交通卡；1->单程票"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "票价查询",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://service.shmetro.com/i/p?o=0926&d=0737&t=0",
+					"protocol": "http",
+					"host": [
+						"service",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"i",
+						"p"
+					],
+					"query": [
+						{
+							"key": "o",
+							"value": "0926",
+							"equals": true,
+							"description": "起始站点 id"
+						},
+						{
+							"key": "d",
+							"value": "0737",
+							"equals": true,
+							"description": "终点站 id"
+						},
+						{
+							"key": "t",
+							"value": "0",
+							"equals": true,
+							"description": "票卡种类: 0 -> 交通卡；1->单程票"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "最晚上车/预计下车时间查询",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://service.shmetro.com/i/c?o=0926&d=0737&t=MONTOTHUR_0&tm=82740",
+					"protocol": "http",
+					"host": [
+						"service",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"i",
+						"c"
+					],
+					"query": [
+						{
+							"key": "o",
+							"value": "0926",
+							"equals": true,
+							"description": "起始站 id"
+						},
+						{
+							"key": "d",
+							"value": "0737",
+							"equals": true,
+							"description": "终点站 id"
+						},
+						{
+							"key": "t",
+							"value": "MONTOTHUR_0",
+							"equals": true,
+							"description": "MONTOTHUR_0：周一至周四\nFRIDAY_0：周五\nSATURDAY_0：周六\nWEEKEND_0：周日\n\n"
+						},
+						{
+							"key": "tm",
+							"value": "82740",
+							"equals": true,
+							"description": "下车/上车时间秒数，例如 22:44，22*60*60 + 44*60"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取站点的首末班车时刻表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://m.shmetro.com/interface/metromap/metromap.aspx?func=fltime&stat_id=118",
+					"protocol": "http",
+					"host": [
+						"m",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"interface",
+						"metromap",
+						"metromap.aspx"
+					],
+					"query": [
+						{
+							"key": "func",
+							"value": "fltime",
+							"equals": true
+						},
+						{
+							"key": "stat_id",
+							"value": "118",
+							"equals": true,
+							"description": "站点 id"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取站点信息",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://m.shmetro.com/interface/metromap/metromap.aspx?func=stationInfo&stat_id=0118",
+					"protocol": "http",
+					"host": [
+						"m",
+						"shmetro",
+						"com"
+					],
+					"path": [
+						"interface",
+						"metromap",
+						"metromap.aspx"
+					],
+					"query": [
+						{
+							"key": "func",
+							"value": "stationInfo",
+							"equals": true
+						},
+						{
+							"key": "stat_id",
+							"value": "0118",
+							"equals": true,
+							"description": "站点 id"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
